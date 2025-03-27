@@ -7,7 +7,7 @@ preamble {=
 
 reactor Camera {
     output out  :{=c_frame_t=};
-    state  frame:{=c_frame_t=};
+    state  frame = {=c_frame_t=};
     timer  t(0, 17 msec); // 60 fps
     reaction(t) -> out {=
         // Capture a frame.
@@ -18,7 +18,7 @@ reactor Camera {
 
 reactor LiDAR {
     output out  :{=l_frame_t=};
-    state  frame:{=l_frame_t=};
+    state  frame = {=l_frame_t=};
     timer  t(0, 34 msec); // 30 fps
     reaction(t) -> out {=
         // Capture a frame.
@@ -37,7 +37,7 @@ reactor Pedal {
 reactor Brakes {
     input inADAS:int;
     input inPedal:int;
-    state brakesApplied:int(0);
+    state brakesApplied:int = 0;
     reaction(inADAS, inPedal) {=
         // Actuate brakes.
         self->brakesApplied = 1;
