@@ -11,7 +11,7 @@ reactor Vision {
     
     input in:int;
     output out:int;
-    state ramp:int(0);
+    state ramp:int = 0;
     
     reaction(in) -> out {=
         if (self->ramp == 1) {
