@@ -6,7 +6,7 @@ preamble {=
 =}
 
 reactor Camera {
-    output out  :{=c_frame_t=};
+    output out:{=c_frame_t=};
     state  frame:int = {=c_frame_t=};
     timer  t(0, 17 msec); // 60 fps
     reaction(t) -> out {=
@@ -17,7 +17,7 @@ reactor Camera {
 }
 
 reactor LiDAR {
-    output out  :{=l_frame_t=};
+    output out:{=l_frame_t=};
     state  frame:int = {=l_frame_t=};
     timer  t(0, 34 msec); // 30 fps
     reaction(t) -> out {=
