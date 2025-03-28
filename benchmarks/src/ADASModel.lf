@@ -1,4 +1,6 @@
-target C;
+target C {
+    keepalive: true
+}
 
 preamble {=
     typedef int c_frame_t;
